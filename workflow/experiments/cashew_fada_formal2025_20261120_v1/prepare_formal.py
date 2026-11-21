@@ -49,29 +49,38 @@ sys.path.insert(0, str(PROJECT / 'fada_expert_runs/BEN_TGO_GHA_fixed200_2019_202
 from tile_random_sample import sample_by_tile
 
 
-def period_directory(db, tile, late_path, year, countries, choice):
+def directory_catalog(db):
+    # Read the small inventory table once, then look up each tile in memory.
+    catalog = defaultdict(list)
+    for row in db.execute('SELECT * FROM directories'):
+        image_year = row['file_name_year']
+        if image_year not in ('2018', '2019', '2024', '2025'):
+            continue
+        path = imagery_path(row['path'])
+        period = int(path.parents[1].name)
+        if period in (2019, 2025):
+            catalog[row['tile_id'], period, int(image_year)].append((path, row))
+    return catalog
+
+
+def period_directory(catalog, tile, late_path, year, countries, choice):
     # 'actual_year' is the inventory period. 'file_name_year' is the AEF capture year.
-    candidates = db.execute(
-        'SELECT * FROM directories WHERE tile_id=? AND file_name_year=?',
-        (tile, str(choice)))
-    rows = [row for row in candidates
-            if imagery_path(row['path']).parents[1].name == str(year)
-            and COUNTRY_CODES.get(row['country']) in countries]
-    if year == 2025:
-        rows = [row for row in rows if imagery_path(row['path']) == Path(late_path)]
+    candidates = catalog.get((tile, year, choice), ())
+    rows = [row for path, row in candidates if COUNTRY_CODES.get(row['country']) in countries
+            and (year != 2025 or path == Path(late_path))]
     if not rows:
         raise ValueError(f'Missing registered AEF {choice} imagery for {tile} in period {year}')
     preferred = Path(late_path).parent.name
     return min(rows, key=lambda row: (row['country'] != preferred, row['country']))
 
 
-def read_locations(db, group, year):
+def read_locations(db, catalog, group, year):
     locations = []
     years_by_tile = registered_years()
     for tile, late_path in sorted(group['members'].items()):
         early, late = years_by_tile[tile]
         choice = late if year == 2025 else early
-        directory = period_directory(db, tile, late_path, year, group['countries'], choice)
+        directory = period_directory(catalog, tile, late_path, year, group['countries'], choice)
         files = db.execute('SELECT p.patch_id,p.west,p.south,p.east,p.north,l.file_name '
                            'FROM patches p JOIN locations l ON p.id=l.patch_no '
                            'WHERE p.patch_id>=? AND p.patch_id<? AND l.directory_id=? ORDER BY p.patch_id',
@@ -196,7 +205,7 @@ def prepare_transfer(job, parent):
                                          'parent_checkpoint_sha256': receipt['full_checkpoint_sha256']}
 
 
-def prepare_group(db, group, year, protection):
+def prepare_group(db, catalog, group, year, protection):
     name = group['name'].replace('_y2025_', f'_y{year}_')
     destination = ROOT / 'jobs' / name
     if (destination / 'job_candidate.json').is_file():
@@ -208,7 +217,7 @@ def prepare_group(db, group, year, protection):
         return dict(name=name, reused_registration=True, patches=job['target_patch_count'])
     if destination.exists():
         destination.rename(destination.with_name('.incomplete_' + name + '_' + str(time.time_ns())))
-    locations = read_locations(db, group, year)
+    locations = read_locations(db, catalog, group, year)
     destination.mkdir()
     job = new_job(group, year, destination)
     count = prepare_panel(job, destination, locations, group)
@@ -239,11 +248,12 @@ def prepare_host(host, year, first):
     with lock.open('a') as handle, sqlite3.connect(database.as_uri() + '?mode=ro', uri=True) as db:
         fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
         db.row_factory = sqlite3.Row
+        catalog = directory_catalog(db)
         protect_codes = {code for group in plan['jobs'] for code in group['countries']}
         protection = protect_geometry(protect_codes, (year,)) if year == 2025 else None
         if year == 2025:
             for group in scope:
-                record = prepare_group(db, group, year, protection)
+                record = prepare_group(db, catalog, group, year, protection)
                 print(json.dumps(record, ensure_ascii=False), flush=True)
             return
         waiting = list(scope)
@@ -255,7 +265,7 @@ def prepare_host(host, year, first):
                 if not (parent / 'frozen_selection.json').is_file():
                     continue
                 try:
-                    record = prepare_group(db, group, year, protection)
+                    record = prepare_group(db, catalog, group, year, protection)
                 except (ValueError, FileNotFoundError) as error:
                     failures[group['name']] = str(error)
                     print(json.dumps({'job': group['name'], 'error': str(error)}), flush=True)
