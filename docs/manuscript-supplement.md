@@ -1,52 +1,52 @@
-# 西非腰果制图｜论文补充材料
+# West African Cashew Mapping Supplement
 
-## S1. 研究背景与范围
+## S1. Background and study area
 
-Yin 等人使用 2.4 m Planet Basemaps 时序影像和 0.5 m 航空影像绘制了 Benin 全国小农腰果种植园。本研究把制图范围扩展到西非，用一致的年度遥感特征和可迁移的模型，绘制两个时期的腰果分布。Benin 用于建立带标签的源域模型。本研究的空间分辨率为 10 m。 [Yin 等，2023](https://doi.org/10.1016/j.rse.2023.113695)
+Yin et al. mapped smallholder cashew plantations across Benin using time series of 2.4 m Planet Basemaps and 0.5 m aerial imagery. This study extends mapping to West Africa using consistent annual remote sensing features and transferable models. It maps cashew distribution at 10 m resolution for two periods and uses labeled data from Benin to train the source-domain model. [Yin et al. (2023)](https://doi.org/10.1016/j.rse.2023.113695)
 
-研究范围包括 Benin、Burkina Faso、Côte d’Ivoire、Gambia、Ghana、Guinea、Guinea-Bissau、Mali、Nigeria、Senegal 和 Togo，共 11 国。Liberia 和 Sierra Leone 的腰果种植规模很小，本研究未将两国纳入制图范围。研究覆盖以制图栅格和瓦片清单为准。
+The study covers Benin, Burkina Faso, Côte d’Ivoire, Gambia, Ghana, Guinea, Guinea-Bissau, Mali, Nigeria, Senegal, and Togo. The 11-country study footprint follows the mapping grid and tile inventory. Cashew cultivation in Liberia and Sierra Leone was too limited for inclusion.
 
-## S2. 遥感数据与两期选年
+## S2. Remote sensing data and year selection
 
-分类输入为 Google Earth Engine 的 **Satellite Embedding V1 年度产品**（`GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL`）。该产品由 AlphaEarth Foundations 生成，以 64 维向量表达每个 10 m 像元在一个日历年的地表条件，其中融合了多源地球观测信息。模型和分组使用 AEF。Sentinel-2 用于为每块瓦片比较候选年份的观测条件。 [AEF 数据目录](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_SATELLITE_EMBEDDING_V1_ANNUAL) · [AlphaEarth Foundations 论文](https://arxiv.org/abs/2507.22291)
+The classifier and tile grouping use the **Satellite Embedding V1 annual product** from Google Earth Engine (`GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL`). AlphaEarth Foundations (AEF) integrates multiple Earth observation sources into a 64-dimensional vector that represents land surface conditions at each 10 m pixel for a calendar year. Sentinel-2 scene counts guide the choice of imagery year for each tile. [AEF data catalog](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_SATELLITE_EMBEDDING_V1_ANNUAL) · [AlphaEarth Foundations paper](https://arxiv.org/abs/2507.22291)
 
-1. 以固定的地理瓦片为单位，分别比较早期 **2018 与 2019**、晚期 **2024 与 2025**。
-2. 在 `COPERNICUS/S2_SR_HARMONIZED` 中，统计每个候选日历年内与瓦片相交、且 `CLOUDY_PIXEL_PERCENTAGE < 60` 的 Sentinel-2 地表反射率影像条目。以该场景级计数衡量观测可用性。瓦片内单个像元的有效观测还取决于局部云、阴影及影像覆盖。 [Sentinel-2 数据目录](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED)
-3. 同一期内选择计数较多的年份，计数相同取较晚年份。随后读取选中日历年的 AEF 年度嵌入并按瓦片裁切。两期分别选年，每块瓦片在每期使用一个年度嵌入。
-4. 保留固定瓦片 ID 和实际 AEF 年份。原始选年网格有 707 块。下表使用进入制图分组的 676 个唯一瓦片作为分母。
+1. Use a fixed geographic tile grid. Compare **2018 with 2019** for the early period and **2024 with 2025** for the late period.
+2. For each tile and candidate calendar year, count Sentinel-2 surface reflectance scenes in `COPERNICUS/S2_SR_HARMONIZED` that intersect the tile and satisfy `CLOUDY_PIXEL_PERCENTAGE < 60`. The scene count is a proxy for observation availability. Usable observations at a given pixel depend on local cloud, shadow, and image coverage. [Sentinel-2 data catalog](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED)
+3. For each period, choose the year with the higher count. If the counts tie, choose the later year. Read and crop the AEF embedding for the chosen calendar year to the tile. Each tile uses one annual embedding per period.
+4. Record the fixed tile ID and actual AEF year. The original year-selection grid contains 707 tiles. The table summarizes the 676 unique tiles included in the mapping groups.
 
-| 时期 | 候选年份 | 选中第一年 | 选中第二年 |
+| Period | Candidate years | Tiles assigned to the first year | Tiles assigned to the second year |
 | --- | --- | ---: | ---: |
-| 早期 | 2018 / 2019 | 0（2018） | 676（2019） |
-| 晚期 | 2024 / 2025 | 58（2024） | 618（2025） |
+| Early | 2018 / 2019 | 0 (2018) | 676 (2019) |
+| Late | 2024 / 2025 | 58 (2024) | 618 (2025) |
 
-上表统计的是观测计数选年。已生成的输入影像应通过实际年份和瓦片 ID 与选年清单核对。“2025 图”表示晚期地图，部分区域使用 2024 AEF。 [选年清单](../methods/data/tile-years.csv)
+The table summarizes year selection based on observation counts. Check the tile ID and actual year of each input image against the inventory. The “2025 map” covers the late period, including tiles where the selected embedding is from 2024. [Tile year inventory](../methods/data/tile-years.csv)
 
-## S3. 按嵌入特征与地理邻接划分域适应组
+## S3. Domain adaptation groups based on features and spatial adjacency
 
-**分组目的。** 西非不同区域的植被类型、降雨梯度、作物组合和土地利用背景各异。把具有相似 AEF 表征且地理连续的瓦片作为一个目标域，可以让相近景观共享域适应模型，并以组内样本支持训练。瓦片可以跨行政边界共享模型，例如 Benin–Togo，以及 Gambia–Senegal–Guinea-Bissau。
+**Purpose.** West African landscapes vary in vegetation, rainfall, crop composition, and land use. Grouping geographically contiguous tiles with similar AEF features lets comparable landscapes share a domain adaptation model and pool training samples. Groups can cross national borders, as in Benin–Togo and Gambia–Senegal–Guinea-Bissau.
 
-**瓦片描述。** 在晚期 AEF 瓦片内做空间分层采样，使用有效像元计算 64 个嵌入维度的均值与标准差。两个向量各自进行 L2 归一化。拼接时对均值、标准差分别乘以 √0.8 和 √0.2，使两块对平方距离的权重为 80% 和 20%。均值表示整体地表特征，标准差补充瓦片内的异质性。
+**Tile representation.** For each late-period tile, draw a spatially stratified sample and use valid pixels to compute the mean and standard deviation of each of the 64 embedding dimensions. Apply L2 normalization separately to the two vectors. Before concatenation, multiply the mean vector by √0.8 and the standard deviation vector by √0.2. The two components then contribute with weights of 80% and 20% to squared feature distance. The mean captures overall land surface characteristics, while the standard deviation captures within-tile heterogeneity.
 
-**空间约束。** 按瓦片相接关系构建邻接图，结合嵌入差异和瓦片中心的空间距离进行邻接约束的 Ward 聚类。Ward 每次选择合并后组内离散度增加较小的邻接簇。候选划分兼顾组内特征相似性、空间连续性、地理跨度和样本规模。可复现的分组代码以 350 km 为组内最远瓦片中心距离上限，优先满足每组至少三个瓦片及 4,000 个可用影像块。算法用轮廓系数比较组间分离，用两个分层采样子集的调整兰德指数检查分组稳定性。目标域评价点的类别和得分不参与特征构建或分组。
+**Spatial constraints.** Build an adjacency graph from tiles that touch. Use adjacency-constrained Ward clustering that accounts for embedding dissimilarity and the geographic distance between tile centers. At each step, Ward clustering merges adjacent clusters that produce the smallest increase in within-group dispersion. Compare partitions based on feature similarity within groups, spatial continuity, geographic extent, and sample size. The reproducible grouping code caps the maximum distance between tile centers within a group at 350 km and prioritizes groups with at least three tiles and 4,000 usable image patches. Compare cluster separation using the silhouette score. Assess stability using the adjusted Rand index across two stratified subsamples. Target-domain reference labels and evaluation scores are excluded from feature construction and grouping.
 
-**分组结果。** 去除同一网格瓦片的跨国下载重复记录后，研究范围有 **676 个唯一瓦片，形成 90 个组**。每组成员用于两期匹配，合计 **180 个组别×时期的制图任务**。组别成员表记录瓦片与分组的对应关系，瓦片覆盖统计以唯一 ID 计数。全域制图按这 180 个任务推进。 [分组表与地图](../methods/data/README.md)
+**Grouping result.** After deduplicating tiles downloaded for multiple countries, the study has **676 unique tiles in 90 groups**. Each group uses the same tile membership in both periods, giving **180 group-period mapping tasks**. The membership table associates tiles with groups. Coverage statistics count distinct tile IDs. [Group membership and maps](../methods/data/README.md)
 
-## S4. 分组域适应和制图
+## S4. Domain adaptation and map production
 
-1. **晚期。** 各组从同一 Benin 源域权重初始化并建立优化状态。模型执行四类像元级语义分割，监督训练用带标签的源域图像，无标签目标影像用于域对齐和固定面板上的观测。
-2. **难例补充。** 每完成五轮，依据目标影像上各类预测间的竞争和不确定性挑选待检查区域。经日期核验的高分辨率影像支持四类判读和边界勾画，时间需在 2024 年 1 月 1 日及之后。只有对齐到原始 10 m 网格且通过验收的像元标签参与四类交叉熵。保留样本来源和使用记录。
-3. **早期。** 同一组使用冻结的晚期选定模型权重初始化，优化状态重新建立。早期使用对应的 AEF 影像，关闭自动标注，不继承晚期难例库。
-4. **调参、停止与选模。** Agent 根据源域验证、无标签目标影像、模型和梯度诊断、实际干预响应及本组已使用的训练标签做决策。停止依据可比损失下降的边际收益。停止后，按统一部署状态比较候选权重，再固定用于制图的 checkpoint。
-5. **输出。** 每组输出两套 GeoTIFF 与 KMZ。四类 argmax 图逐像元选最高概率类别。置信度版只将 argmax 为腰果且腰果概率低于 0.5 的像元设为“不确定”（代码 10）。类别 0 为农作物及其他，1 为混合树木及湿地/水体，2 为腰果，3 为建设用地。
+1. **Late period.** Initialize each group from the same Benin source-domain weights with a fresh optimizer state. The model performs four-class, pixel-level semantic segmentation. Labeled source-domain imagery provides supervision. Unlabeled target imagery supports domain alignment and monitoring on a fixed panel.
+2. **Hard examples.** Every five completed epochs, select target areas for review based on competition among predicted classes and prediction uncertainty. Use high-resolution imagery with verified acquisition dates on or after 1 January 2024 for class interpretation and boundary delineation. Supplementary pixel labels contribute to four-class cross-entropy only after acceptance and alignment to the original 10 m grid. Record sample provenance and use.
+3. **Early period.** Initialize from the frozen late-period checkpoint for the same group and start with a fresh optimizer state. Use the corresponding early-period AEF imagery. Disable automated annotation and exclude the late-period hard-example library.
+4. **Tuning, stopping, and checkpoint selection.** The agent uses source-domain validation, unlabeled target imagery, model and gradient diagnostics, observed responses to interventions, and supplementary training labels already used by the group. Stop decisions consider the marginal reduction in comparable losses. After stopping, compare candidate checkpoints under the same deployment configuration and freeze the checkpoint for mapping.
+5. **Map outputs.** Each group produces two versions, both in GeoTIFF and KMZ formats. The four-class argmax map assigns each pixel to the class with the highest predicted probability. The confidence-screened version reassigns pixels whose argmax class is cashew and whose cashew probability is below 0.5 to uncertain (code 10). The four classes are cropland and other open land (0), other woody vegetation, wetlands, or water (1), cashew (2), and built-up land (3).
 
-## S5. 参考样本与地图评价
+## S5. Reference samples and map evaluation
 
-**抽样设计。** 基础评价点采用格网分层随机抽样（grid-based spatially stratified random sampling）。将研究区划分为细网格，把每个纳入抽样的格网作为一个空间层，在层内随机抽取点位。通过格网分层使基础样本覆盖各地景观。基于 Google Earth 的历史高清影像做目视解译，记录农作物及其他开阔地、其他树木及湿地或水体、腰果、建设用地四类。随后在同一批抽样格网内，通过目视解译人工寻找并补充可确认的腰果点，以提高腰果类别的样本量。 [Stehman 与 Foody，2019](https://doi.org/10.1016/j.rse.2019.05.018)
+**Sampling design.** Use grid-based spatially stratified random sampling for the initial reference points. Divide the study area into fine grid cells and treat each sampled cell as a spatial stratum. Select locations at random within each stratum to distribute the base sample across landscapes. Visually interpret historical high-resolution Google Earth imagery and assign each reference record to one of the four land-cover classes defined in S4. Then search within the same sampled cells for visually confirmed cashew sites to increase the sample size for that class. [Stehman and Foody (2019)](https://doi.org/10.1016/j.rse.2019.05.018)
 
-**表 S3. 参考样本合计。** 按坐标去重后有 **8,313 个地理点位**，共 **16,461 条地类判读记录**，其中 **2,291 条为腰果**。一个点位可对应两条判读记录。完整四类数量见 CSV。 [评价样本数量](../methods/data/reference-point-counts.csv)
+**Table S3. Reference sample counts.** After deduplication by coordinates, the reference set contains **8,313 distinct locations** and **16,461 interpretation records**, including **2,291 cashew records**. A single location can have two interpretation records. The linked table includes counts for all four classes. [Reference sample counts](../methods/data/reference-point-counts.csv)
 
-| 国家 | 去重评价点位 | 全部判读记录 | 腰果判读记录 |
+| Country | Distinct reference locations | All interpretation records | Cashew records |
 | --- | ---: | ---: | ---: |
 | Benin | 468 | 913 | 366 |
 | Burkina Faso | 508 | 1,015 | 24 |
@@ -59,6 +59,6 @@ Yin 等人使用 2.4 m Planet Basemaps 时序影像和 0.5 m 航空影像绘制�
 | Nigeria | 2,400 | 4,728 | 295 |
 | Senegal | 585 | 1,170 | 76 |
 | Togo | 203 | 403 | 26 |
-| **合计** | **8,313** | **16,461** | **2,291** |
+| **Total** | **8,313** | **16,461** | **2,291** |
 
-**精度评价。** 目标域评价点仅用于模型冻结后的评价。记录评价覆盖、checkpoint 身份和地图解码方式，使 F1、精确率和召回率可追溯到对应图件。现有来源字段按采集或整理来源记录，无法把所有点分回基础随机样本和补充样本。因此，合并计算的指标描述这套参考样本上的表现。依据概率抽样设计推断全域精度时，需要能核实点位的纳入概率和对应设计权重。若在同一批点上求最大 F1 的阈值，报告为事后拟合结果。 [概率抽样与地图精度评价](https://doi.org/10.1016/j.rse.2019.05.018)
+**Accuracy assessment.** Use target-domain reference points after the model has been frozen. Record reference coverage, checkpoint identity, and the rule used to convert probabilities into map classes so that F1, precision, and recall can be traced to each output. The provenance fields document collection or curation sources, with limited information for separating the initial random sample from the supplemental sample. Pooled metrics therefore describe performance on the combined reference set. Design-based estimates for the full study area require verifiable inclusion probabilities and corresponding weights. When a threshold is chosen to maximize F1 on these same points, report the score as a post hoc fit. [Probability sampling and map accuracy assessment](https://doi.org/10.1016/j.rse.2019.05.018)
