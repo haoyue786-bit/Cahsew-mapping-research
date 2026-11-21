@@ -1,0 +1,7 @@
+{
+  "skill_sha256": "fdd6600098dbed3cefaecdcf5307bd6a9ba6bbb0e0775b537715d250ee1c2f9e",
+  "verifier_sha256": "9e4745a740afef8de66f29ac972cab4149b14356029744f3c7a194c8cdd90863",
+  "reference_hashes": {
+    "hard-sample-training.md": "34e6d36c61428ea159638149f9896d6fe74e39fc9f5dbe3562f210782f1d03bf"
+  }
+}

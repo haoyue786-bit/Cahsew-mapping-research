@@ -1,0 +1,742 @@
+{
+  "automatic_annotation_earliest_actual_capture": "2024-01-01",
+  "between_group_starts_seconds": 45,
+  "hosts": {
+    "124": {
+      "gpu_slots": {
+        "0": 6
+      },
+      "sam_unit": "cashew-sam2-19574-124-gpu0.service",
+      "wave_size": 2
+    },
+    "local": {
+      "gpu_slots": {
+        "0": 2,
+        "1": 3,
+        "2": 3,
+        "3": 3,
+        "4": 3
+      },
+      "sam_unit": "cashew-sam2-19574.service",
+      "wave_size": 1
+    }
+  },
+  "jobs": [
+    {
+      "countries": [
+        "CIV"
+      ],
+      "family": "CIV",
+      "group": 1,
+      "host": "local",
+      "members": {
+        "0000000000000000000d": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000000d",
+        "00000000000000000101": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000101",
+        "0000000000000000011d": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000011d",
+        "0000000000000000018b": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000018b",
+        "00000000000000000195": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000195",
+        "00000000000000000216": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000216",
+        "00000000000000000217": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000217",
+        "00000000000000000239": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000239",
+        "00000000000000000263": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000263",
+        "00000000000000000272": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000272"
+      },
+      "name": "CIV_y2025_group01"
+    },
+    {
+      "countries": [
+        "CIV"
+      ],
+      "family": "CIV",
+      "group": 2,
+      "host": "124",
+      "members": {
+        "000000000000000000a2": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000a2",
+        "000000000000000000e2": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000e2",
+        "000000000000000000f9": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000f9",
+        "00000000000000000121": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000121",
+        "000000000000000001c6": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000001c6",
+        "000000000000000001d1": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000001d1",
+        "000000000000000001e4": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000001e4",
+        "000000000000000001e5": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000001e5",
+        "00000000000000000244": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000244",
+        "00000000000000000253": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000253"
+      },
+      "name": "CIV_y2025_group02"
+    },
+    {
+      "countries": [
+        "CIV"
+      ],
+      "family": "CIV",
+      "group": 3,
+      "host": "local",
+      "members": {
+        "0000000000000000001b": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000001b",
+        "0000000000000000005a": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000005a",
+        "00000000000000000079": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000079",
+        "000000000000000000cc": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000cc",
+        "000000000000000000cf": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000cf",
+        "00000000000000000105": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000105",
+        "000000000000000001be": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000001be",
+        "00000000000000000219": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000219",
+        "00000000000000000273": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000273",
+        "000000000000000002a0": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000002a0"
+      },
+      "name": "CIV_y2025_group03"
+    },
+    {
+      "countries": [
+        "CIV"
+      ],
+      "family": "CIV",
+      "group": 4,
+      "host": "local",
+      "members": {
+        "00000000000000000036": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000036",
+        "0000000000000000004b": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000004b",
+        "00000000000000000088": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000088",
+        "000000000000000000bb": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000bb",
+        "0000000000000000019e": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000019e",
+        "0000000000000000020a": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000020a",
+        "0000000000000000021f": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000021f",
+        "0000000000000000023e": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000023e",
+        "0000000000000000025b": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000025b",
+        "0000000000000000028e": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000028e",
+        "000000000000000002ad": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000002ad"
+      },
+      "name": "CIV_y2025_group04"
+    },
+    {
+      "countries": [
+        "CIV"
+      ],
+      "family": "CIV",
+      "group": 5,
+      "host": "124",
+      "members": {
+        "00000000000000000049": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_00000000000000000049",
+        "0000000000000000008f": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_0000000000000000008f",
+        "0000000000000000009e": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000009e",
+        "000000000000000000b0": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000b0",
+        "000000000000000000ba": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_000000000000000000ba",
+        "000000000000000000cb": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_000000000000000000cb",
+        "0000000000000000012d": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000012d",
+        "00000000000000000135": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_00000000000000000135",
+        "0000000000000000016d": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_0000000000000000016d",
+        "000000000000000001e6": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_000000000000000001e6",
+        "00000000000000000298": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_00000000000000000298",
+        "0000000000000000029b": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_0000000000000000029b"
+      },
+      "name": "CIV_y2025_group05"
+    },
+    {
+      "countries": [
+        "CIV"
+      ],
+      "family": "CIV",
+      "group": 6,
+      "host": "local",
+      "members": {
+        "0000000000000000006c": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000006c",
+        "000000000000000000bc": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000bc",
+        "000000000000000000c4": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_000000000000000000c4",
+        "000000000000000000e7": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000e7",
+        "000000000000000000fd": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000fd",
+        "00000000000000000107": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000107",
+        "0000000000000000012c": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000012c",
+        "000000000000000002c0": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000002c0"
+      },
+      "name": "CIV_y2025_group06"
+    },
+    {
+      "countries": [
+        "CIV"
+      ],
+      "family": "CIV",
+      "group": 7,
+      "host": "local",
+      "members": {
+        "00000000000000000005": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000005",
+        "0000000000000000000f": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_0000000000000000000f",
+        "0000000000000000005f": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000005f",
+        "000000000000000000a6": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000a6",
+        "000000000000000000df": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000000df",
+        "000000000000000000e8": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_000000000000000000e8",
+        "0000000000000000015a": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000015a",
+        "0000000000000000018a": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_0000000000000000018a",
+        "000000000000000001b8": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000001b8",
+        "000000000000000001cb": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2024_000000000000000001cb",
+        "00000000000000000203": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_00000000000000000203",
+        "000000000000000002a2": "@ASSETS@/alphaearth_data_split/2025/Ivoire/Ivoire2025_000000000000000002a2"
+      },
+      "name": "CIV_y2025_group07"
+    },
+    {
+      "countries": [
+        "NGA"
+      ],
+      "family": "NGA",
+      "group": 18,
+      "host": "local",
+      "members": {
+        "000000000000000000ad": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000000ad",
+        "00000000000000000169": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000169",
+        "000000000000000001a9": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000001a9",
+        "00000000000000000220": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000220",
+        "00000000000000000283": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000283",
+        "000000000000000002a4": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000002a4"
+      },
+      "name": "NGA_y2025_group18"
+    },
+    {
+      "countries": [
+        "NGA"
+      ],
+      "family": "NGA",
+      "group": 26,
+      "host": "124",
+      "members": {
+        "000000000000000000d6": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000000d6",
+        "000000000000000001c2": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000001c2",
+        "000000000000000001ef": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000001ef",
+        "00000000000000000237": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000237",
+        "00000000000000000255": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000255"
+      },
+      "name": "NGA_y2025_group26"
+    },
+    {
+      "countries": [
+        "NGA"
+      ],
+      "family": "NGA",
+      "group": 27,
+      "host": "local",
+      "members": {
+        "00000000000000000029": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000029",
+        "00000000000000000031": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000031",
+        "000000000000000000c3": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000000c3",
+        "000000000000000000e3": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000000e3",
+        "0000000000000000020e": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_0000000000000000020e",
+        "00000000000000000227": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000227"
+      },
+      "name": "NGA_y2025_group27"
+    },
+    {
+      "countries": [
+        "NGA"
+      ],
+      "family": "NGA",
+      "group": 29,
+      "host": "local",
+      "members": {
+        "0000000000000000010e": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_0000000000000000010e",
+        "00000000000000000179": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000179",
+        "000000000000000001f4": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000001f4",
+        "00000000000000000228": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000228",
+        "0000000000000000026f": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_0000000000000000026f",
+        "0000000000000000027c": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_0000000000000000027c"
+      },
+      "name": "NGA_y2025_group29"
+    },
+    {
+      "countries": [
+        "NGA"
+      ],
+      "family": "NGA",
+      "group": 31,
+      "host": "124",
+      "members": {
+        "000000000000000001a4": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000001a4",
+        "0000000000000000022b": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_0000000000000000022b",
+        "00000000000000000264": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000264"
+      },
+      "name": "NGA_y2025_group31"
+    },
+    {
+      "countries": [
+        "NGA"
+      ],
+      "family": "NGA",
+      "group": 32,
+      "host": "local",
+      "members": {
+        "000000000000000001aa": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000001aa",
+        "000000000000000001af": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000001af",
+        "0000000000000000023a": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_0000000000000000023a"
+      },
+      "name": "NGA_y2025_group32"
+    },
+    {
+      "countries": [
+        "NGA"
+      ],
+      "family": "NGA",
+      "group": 33,
+      "host": "local",
+      "members": {
+        "0000000000000000001f": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_0000000000000000001f",
+        "000000000000000001c4": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000001c4",
+        "000000000000000001c7": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000001c7",
+        "000000000000000001e0": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000001e0",
+        "0000000000000000029a": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_0000000000000000029a",
+        "000000000000000002b2": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000002b2"
+      },
+      "name": "NGA_y2025_group33"
+    },
+    {
+      "countries": [
+        "NGA"
+      ],
+      "family": "NGA",
+      "group": 35,
+      "host": "124",
+      "members": {
+        "000000000000000000b7": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_000000000000000000b7",
+        "0000000000000000020f": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_0000000000000000020f",
+        "0000000000000000021b": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_0000000000000000021b",
+        "0000000000000000028c": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_0000000000000000028c",
+        "00000000000000000295": "@ASSETS@/alphaearth_data_split/2025/Nigeria/Nigeria2025_00000000000000000295"
+      },
+      "name": "NGA_y2025_group35"
+    },
+    {
+      "countries": [
+        "GMB",
+        "SEN",
+        "GNB"
+      ],
+      "family": "GSG",
+      "group": 1,
+      "host": "local",
+      "members": {
+        "000000000000000000b3": "@ASSETS@/alphaearth_data_split/2025/Gambia/Gambia2025_000000000000000000b3",
+        "000000000000000000e4": "@ASSETS@/alphaearth_data_split/2025/Gambia/Gambia2025_000000000000000000e4",
+        "000000000000000001c5": "@ASSETS@/alphaearth_data_split/2025/Gambia/Gambia2025_000000000000000001c5",
+        "000000000000000001d8": "@ASSETS@/alphaearth_data_split/2025/Gambia/Gambia2025_000000000000000001d8",
+        "000000000000000001f9": "@ASSETS@/alphaearth_data_split/2025/Gambia/Gambia2025_000000000000000001f9",
+        "000000000000000002bc": "@ASSETS@/alphaearth_data_split/2025/Gambia/Gambia2025_000000000000000002bc"
+      },
+      "name": "GSG_y2025_group01"
+    },
+    {
+      "countries": [
+        "GMB",
+        "SEN",
+        "GNB"
+      ],
+      "family": "GSG",
+      "group": 2,
+      "host": "local",
+      "members": {
+        "00000000000000000017": "@ASSETS@/alphaearth_data_split/2025/Gambia/Gambia2025_00000000000000000017",
+        "00000000000000000095": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_00000000000000000095",
+        "000000000000000000a1": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000000a1",
+        "000000000000000001c8": "@ASSETS@/alphaearth_data_split/2025/Gambia/Gambia2025_000000000000000001c8",
+        "0000000000000000022a": "@ASSETS@/alphaearth_data_split/2025/Gambia/Gambia2025_0000000000000000022a",
+        "000000000000000002af": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000002af"
+      },
+      "name": "GSG_y2025_group02"
+    },
+    {
+      "countries": [
+        "GMB",
+        "SEN",
+        "GNB"
+      ],
+      "family": "GSG",
+      "group": 3,
+      "host": "124",
+      "members": {
+        "0000000000000000000c": "@ASSETS@/alphaearth_data_split/2025/Senegal/Senegal2025_0000000000000000000c",
+        "00000000000000000045": "@ASSETS@/alphaearth_data_split/2025/Senegal/Senegal2025_00000000000000000045",
+        "0000000000000000006b": "@ASSETS@/alphaearth_data_split/2025/Senegal/Senegal2025_0000000000000000006b",
+        "00000000000000000082": "@ASSETS@/alphaearth_data_split/2025/Senegal/Senegal2025_00000000000000000082",
+        "0000000000000000018d": "@ASSETS@/alphaearth_data_split/2025/Senegal/Senegal2025_0000000000000000018d",
+        "00000000000000000198": "@ASSETS@/alphaearth_data_split/2025/Senegal/Senegal2025_00000000000000000198",
+        "000000000000000001a3": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000001a3",
+        "000000000000000001ae": "@ASSETS@/alphaearth_data_split/2025/Senegal/Senegal2025_000000000000000001ae",
+        "000000000000000001b0": "@ASSETS@/alphaearth_data_split/2025/Senegal/Senegal2025_000000000000000001b0",
+        "00000000000000000282": "@ASSETS@/alphaearth_data_split/2025/Senegal/Senegal2025_00000000000000000282"
+      },
+      "name": "GSG_y2025_group03"
+    },
+    {
+      "countries": [
+        "GMB",
+        "SEN",
+        "GNB"
+      ],
+      "family": "GSG",
+      "group": 4,
+      "host": "local",
+      "members": {
+        "00000000000000000050": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_00000000000000000050",
+        "000000000000000000a0": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000000a0",
+        "000000000000000000b6": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000000b6",
+        "000000000000000000e5": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000000e5",
+        "0000000000000000012a": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_0000000000000000012a",
+        "000000000000000001f0": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000001f0",
+        "0000000000000000028f": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_0000000000000000028f",
+        "00000000000000000293": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_00000000000000000293",
+        "000000000000000002be": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000002be",
+        "000000000000000002c1": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000002c1"
+      },
+      "name": "GSG_y2025_group04"
+    },
+    {
+      "countries": [
+        "GMB",
+        "SEN",
+        "GNB"
+      ],
+      "family": "GSG",
+      "group": 5,
+      "host": "local",
+      "members": {
+        "000000000000000000c5": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000000c5",
+        "000000000000000000c7": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000000c7",
+        "0000000000000000010f": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_0000000000000000010f",
+        "00000000000000000119": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_00000000000000000119",
+        "00000000000000000150": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_00000000000000000150",
+        "000000000000000002c2": "@ASSETS@/alphaearth_data_split/2025/Guinea-Bissau/Guinea-Bissau2025_000000000000000002c2"
+      },
+      "name": "GSG_y2025_group05"
+    },
+    {
+      "countries": [
+        "BEN",
+        "TGO"
+      ],
+      "family": "BEN_TGO",
+      "group": 1,
+      "host": "local",
+      "members": {
+        "00000000000000000160": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000160",
+        "00000000000000000164": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000164",
+        "000000000000000001a1": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000001a1",
+        "00000000000000000213": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000213",
+        "0000000000000000024f": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_0000000000000000024f",
+        "0000000000000000026e": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_0000000000000000026e",
+        "000000000000000002b9": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000002b9"
+      },
+      "name": "BEN_TGO_y2025_group01"
+    },
+    {
+      "countries": [
+        "BEN",
+        "TGO"
+      ],
+      "family": "BEN_TGO",
+      "group": 2,
+      "host": "124",
+      "members": {
+        "00000000000000000038": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000038",
+        "000000000000000000aa": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000000aa",
+        "000000000000000000ad": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000000ad",
+        "000000000000000001a9": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000001a9",
+        "000000000000000001e8": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000001e8",
+        "00000000000000000269": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000269",
+        "0000000000000000027b": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_0000000000000000027b",
+        "00000000000000000283": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000283",
+        "000000000000000002ab": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000002ab",
+        "000000000000000002ba": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000002ba"
+      },
+      "name": "BEN_TGO_y2025_group02"
+    },
+    {
+      "countries": [
+        "BEN",
+        "TGO"
+      ],
+      "family": "BEN_TGO",
+      "group": 4,
+      "host": "local",
+      "members": {
+        "000000000000000000c3": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000000c3",
+        "00000000000000000169": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000169",
+        "000000000000000001fd": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000001fd",
+        "0000000000000000020e": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_0000000000000000020e",
+        "00000000000000000220": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000220",
+        "000000000000000002a4": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000002a4"
+      },
+      "name": "BEN_TGO_y2025_group04"
+    },
+    {
+      "countries": [
+        "BEN",
+        "TGO"
+      ],
+      "family": "BEN_TGO",
+      "group": 5,
+      "host": "local",
+      "members": {
+        "00000000000000000014": "@ASSETS@/alphaearth_data_split/2025/Togo/Togo2025_00000000000000000014",
+        "00000000000000000171": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000171",
+        "00000000000000000176": "@ASSETS@/alphaearth_data_split/2025/Togo/Togo2025_00000000000000000176",
+        "000000000000000001ad": "@ASSETS@/alphaearth_data_split/2025/Togo/Togo2025_000000000000000001ad",
+        "00000000000000000256": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000256"
+      },
+      "name": "BEN_TGO_y2025_group05"
+    },
+    {
+      "countries": [
+        "BEN",
+        "TGO"
+      ],
+      "family": "BEN_TGO",
+      "group": 6,
+      "host": "124",
+      "members": {
+        "00000000000000000032": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000032",
+        "000000000000000000bd": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000000bd",
+        "000000000000000001b9": "@ASSETS@/alphaearth_data_split/2025/Togo/Togo2025_000000000000000001b9",
+        "00000000000000000279": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000279",
+        "000000000000000002ae": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000002ae"
+      },
+      "name": "BEN_TGO_y2025_group06"
+    },
+    {
+      "countries": [
+        "BEN",
+        "TGO"
+      ],
+      "family": "BEN_TGO",
+      "group": 7,
+      "host": "local",
+      "members": {
+        "000000000000000000e3": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000000e3",
+        "0000000000000000013b": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2024_0000000000000000013b",
+        "000000000000000001a4": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000001a4",
+        "000000000000000001dd": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000001dd",
+        "000000000000000001fa": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_000000000000000001fa",
+        "00000000000000000248": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000248",
+        "00000000000000000289": "@ASSETS@/alphaearth_data_split/2025/Benin/Benin2025_00000000000000000289"
+      },
+      "name": "BEN_TGO_y2025_group07"
+    },
+    {
+      "countries": [
+        "GHA"
+      ],
+      "family": "GHA",
+      "group": 2,
+      "host": "local",
+      "members": {
+        "00000000000000000025": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_00000000000000000025",
+        "0000000000000000008a": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_0000000000000000008a",
+        "00000000000000000097": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_00000000000000000097",
+        "000000000000000000a2": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_000000000000000000a2",
+        "000000000000000000e2": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_000000000000000000e2",
+        "000000000000000000f1": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_000000000000000000f1",
+        "0000000000000000010a": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_0000000000000000010a",
+        "00000000000000000126": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_00000000000000000126",
+        "000000000000000001c6": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_000000000000000001c6",
+        "000000000000000001d1": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_000000000000000001d1",
+        "000000000000000001e4": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_000000000000000001e4",
+        "0000000000000000024d": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_0000000000000000024d",
+        "00000000000000000253": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_00000000000000000253",
+        "00000000000000000277": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_00000000000000000277",
+        "000000000000000002a9": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_000000000000000002a9"
+      },
+      "name": "GHA_y2025_group02"
+    },
+    {
+      "countries": [
+        "GHA"
+      ],
+      "family": "GHA",
+      "group": 4,
+      "host": "124",
+      "members": {
+        "00000000000000000085": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_00000000000000000085",
+        "000000000000000000b0": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_000000000000000000b0",
+        "0000000000000000011e": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2024_0000000000000000011e",
+        "0000000000000000012d": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_0000000000000000012d",
+        "0000000000000000016d": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2024_0000000000000000016d",
+        "00000000000000000185": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2024_00000000000000000185",
+        "000000000000000001e6": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2024_000000000000000001e6",
+        "00000000000000000212": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2024_00000000000000000212",
+        "00000000000000000214": "@ASSETS@/alphaearth_data_split/2025/Ghana/Ghana2025_00000000000000000214"
+      },
+      "name": "GHA_y2025_group04"
+    },
+    {
+      "countries": [
+        "GIN"
+      ],
+      "family": "GIN",
+      "group": 1,
+      "host": "local",
+      "members": {
+        "00000000000000000046": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_00000000000000000046",
+        "00000000000000000090": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_00000000000000000090",
+        "00000000000000000096": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_00000000000000000096",
+        "000000000000000000b1": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_000000000000000000b1",
+        "000000000000000000d3": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_000000000000000000d3",
+        "000000000000000000f2": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_000000000000000000f2",
+        "0000000000000000010b": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_0000000000000000010b",
+        "0000000000000000013c": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_0000000000000000013c",
+        "00000000000000000152": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_00000000000000000152",
+        "00000000000000000157": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_00000000000000000157",
+        "0000000000000000015c": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_0000000000000000015c",
+        "0000000000000000016f": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_0000000000000000016f",
+        "000000000000000002a0": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_000000000000000002a0"
+      },
+      "name": "GIN_y2025_group01"
+    },
+    {
+      "countries": [
+        "GIN"
+      ],
+      "family": "GIN",
+      "group": 2,
+      "host": "local",
+      "members": {
+        "000000000000000000cc": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_000000000000000000cc",
+        "000000000000000001be": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_000000000000000001be",
+        "000000000000000001d7": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_000000000000000001d7",
+        "00000000000000000219": "@ASSETS@/alphaearth_data_split/2025/Guinea/Guinea2025_00000000000000000219"
+      },
+      "name": "GIN_y2025_group02"
+    },
+    {
+      "countries": [
+        "BFA"
+      ],
+      "family": "BFA",
+      "group": 8,
+      "host": "local",
+      "members": {
+        "0000000000000000000b": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_0000000000000000000b",
+        "00000000000000000087": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000087",
+        "00000000000000000097": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000097",
+        "000000000000000000c9": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_000000000000000000c9",
+        "0000000000000000011a": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_0000000000000000011a",
+        "00000000000000000126": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000126",
+        "000000000000000001a5": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_000000000000000001a5",
+        "000000000000000001bd": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_000000000000000001bd",
+        "000000000000000001eb": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_000000000000000001eb",
+        "00000000000000000253": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000253",
+        "0000000000000000026c": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_0000000000000000026c",
+        "00000000000000000277": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000277"
+      },
+      "name": "BFA_y2025_group08"
+    },
+    {
+      "countries": [
+        "BFA"
+      ],
+      "family": "BFA",
+      "group": 9,
+      "host": "124",
+      "members": {
+        "00000000000000000028": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000028",
+        "00000000000000000047": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000047",
+        "00000000000000000062": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000062",
+        "00000000000000000120": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000120",
+        "00000000000000000178": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000178",
+        "00000000000000000192": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000192",
+        "0000000000000000019b": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_0000000000000000019b",
+        "000000000000000001ab": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_000000000000000001ab",
+        "000000000000000001e1": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_000000000000000001e1",
+        "00000000000000000200": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000200",
+        "00000000000000000217": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000217",
+        "00000000000000000263": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000263"
+      },
+      "name": "BFA_y2025_group09"
+    },
+    {
+      "countries": [
+        "BFA"
+      ],
+      "family": "BFA",
+      "group": 11,
+      "host": "local",
+      "members": {
+        "0000000000000000000d": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_0000000000000000000d",
+        "000000000000000000a2": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_000000000000000000a2",
+        "00000000000000000121": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000121",
+        "0000000000000000019a": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_0000000000000000019a",
+        "000000000000000001c6": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_000000000000000001c6",
+        "000000000000000001e5": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_000000000000000001e5",
+        "00000000000000000244": "@ASSETS@/alphaearth_data_split/2025/Burkina_Faso/Burkina_Faso2025_00000000000000000244"
+      },
+      "name": "BFA_y2025_group11"
+    },
+    {
+      "countries": [
+        "MLI"
+      ],
+      "family": "MLI",
+      "group": 18,
+      "host": "local",
+      "members": {
+        "00000000000000000028": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000028",
+        "00000000000000000047": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000047",
+        "000000000000000000ef": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_000000000000000000ef",
+        "00000000000000000165": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000165",
+        "00000000000000000178": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000178",
+        "00000000000000000192": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000192",
+        "000000000000000001ab": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_000000000000000001ab",
+        "000000000000000001f2": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_000000000000000001f2",
+        "0000000000000000022c": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_0000000000000000022c"
+      },
+      "name": "MLI_y2025_group18"
+    },
+    {
+      "countries": [
+        "MLI"
+      ],
+      "family": "MLI",
+      "group": 19,
+      "host": "124",
+      "members": {
+        "0000000000000000002c": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_0000000000000000002c",
+        "00000000000000000101": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000101",
+        "00000000000000000188": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000188",
+        "0000000000000000018b": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_0000000000000000018b",
+        "00000000000000000195": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000195",
+        "000000000000000001b6": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_000000000000000001b6",
+        "000000000000000001c3": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_000000000000000001c3",
+        "000000000000000001f7": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_000000000000000001f7",
+        "00000000000000000200": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000200",
+        "00000000000000000222": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000222",
+        "00000000000000000239": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000239",
+        "00000000000000000263": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000263",
+        "0000000000000000028d": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_0000000000000000028d"
+      },
+      "name": "MLI_y2025_group19"
+    },
+    {
+      "countries": [
+        "MLI"
+      ],
+      "family": "MLI",
+      "group": 20,
+      "host": "local",
+      "members": {
+        "00000000000000000090": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000090",
+        "00000000000000000096": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000096",
+        "000000000000000000cf": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_000000000000000000cf",
+        "000000000000000000f2": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_000000000000000000f2",
+        "00000000000000000100": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000100",
+        "00000000000000000272": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_00000000000000000272",
+        "000000000000000002a0": "@ASSETS@/alphaearth_data_split/2025/Mali/Mali2025_000000000000000002a0"
+      },
+      "name": "MLI_y2025_group20"
+    }
+  ],
+  "point_validation_online": false,
+  "prediction_gpu_overrides": {
+    "CIV_y2025_group01": 3,
+    "CIV_y2025_group04": 1,
+    "GSG_y2025_group05": 0,
+    "NGA_y2025_group18": 2,
+    "NGA_y2025_group33": 4
+  },
+  "source_epoch": 173,
+  "source_profile": "source2019_benin_e173",
+  "wave_interval_seconds": 600,
+  "year": 2025
+}

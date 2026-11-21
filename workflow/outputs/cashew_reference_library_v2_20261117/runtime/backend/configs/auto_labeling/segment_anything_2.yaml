@@ -1,0 +1,12 @@
+model_id: segment_anything_2
+display_name: SAM2.1 Large official X plugin
+params:
+  model_cfg: sam2.1_hiera_l
+  model_path: @ASSETS@/outputs/tgo_visual_annotation_v4_20261115/_tools/sam2_weights/sam2.1_hiera_large.pt
+  device: cuda:0
+  show_boxes: false
+  show_masks: true
+  multimask_output: true
+  epsilon_factor: 0.001
+  cache_size: 10
+widgets: []

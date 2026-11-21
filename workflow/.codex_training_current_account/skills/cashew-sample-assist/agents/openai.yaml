@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cashew Sample Assist"
+  short_description: "Select imagery and label 10 m AEF samples with GPT-6.2 Sol"
+  default_prompt: "Use $cashew-sample-assist to select fresh, date-qualified Google Earth and Esri imagery with GPT-6.2 Sol max, annotate supported land units with optional X-AnyLabeling SAM2, and deliver labels on the original AEF grid."

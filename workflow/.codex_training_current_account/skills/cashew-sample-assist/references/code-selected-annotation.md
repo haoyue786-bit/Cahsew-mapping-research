@@ -1,0 +1,9 @@
+# Annotate a locally screened scene
+
+The host has downloaded, checked and ranked the dated scenes. Begin with the selected primary RGB. Request a replacement when it is unsuitable for the units that need labeling. In a usable wet or transitional scene, request the dry candidate when woody identity needs it.
+
+Use `visible_classes` to report the classes you can distinguish across the valid footprint. Choose a whole-tile class when the visible cover is homogeneous. When exactly two classes account for the visible land outside clearly bounded uncertainty, choose one class as SAM2 foreground and assign the other to `background` with a short visible cue for the remainder. Inspect `propose_land_boxes` for the foreground. Use the boxes that fit and adjust or draw prompts for missed or irregular units. Return only the foreground class in `regions`, with a tight box and sure interior points when available. Leave `direct_regions` empty. The host applies the background class everywhere outside accepted SAM2 masks and explicit uncertain areas. Prefer Cashew as the foreground when its extent can be traced.
+
+Use `uncertain_polygons` for places where the remainder class does not hold, including unresolved woody patches. Leave `background` null when the remaining land is heterogeneous or its class cannot be established. In that case supply simple confirmed polygons in `direct_regions` and SAM2 prompts in `regions` as appropriate. Confirm Cashew with local visual evidence for any geometry.
+
+Use `view_details` for up to four precise native-detail crops in one call. Reuse an earlier image when the host returns its ID for the same view. When a reference could distinguish Cashew from Mix tree, retrieve a reviewed example of each in one `lookup_reference` call with `class_id=2` and `comparison_class_id=1`. Use the field detector when numbered candidates would help locate an unresolved region. Submit the geometry once on the chosen source RGB.

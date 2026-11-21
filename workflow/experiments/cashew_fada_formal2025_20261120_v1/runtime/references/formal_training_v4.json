@@ -1,0 +1,290 @@
+{
+  "profile": "sol_high_cashew_skill_formal_pointsealed_20261024_v001",
+  "job_defaults": {
+    "protocol_version": "cashew-fada-training-expert-v4-year-country-entry",
+    "max_epoch": 200,
+    "minimum_stop_epoch": 0,
+    "review_interval": 5,
+    "seed": 16,
+    "variant": {
+      "local_mode": "soft",
+      "confidence_cap": 0.9,
+      "hard_threshold": null
+    },
+    "agentguide_policy": {
+      "version": "formal_distilled_v1",
+      "stopping": "marginal_review_value_v1",
+      "selection": "role_phase_coverage_v2",
+      "tuning": "paired_response_v1"
+    },
+    "planet_decision_reference": false,
+    "area_alert_policy": {
+      "version": "unified_area_alert_v1",
+      "thresholds": [
+        0.15,
+        0.25,
+        0.4
+      ],
+      "status": "user_selected_trial_not_accuracy_calibrated",
+      "automatic_loss_or_logit_change": false
+    },
+    "geographic_prior_policy": {
+      "version": "WestAfrica_approved_regional_prior_v2_context_20261014",
+      "role": "context_and_diagnostic_evidence",
+      "tile_area_fraction_from_text": false,
+      "source_class_weights_changed": false
+    },
+    "negative_response_policy": {
+      "version": "late_negative_response_v3",
+      "actual_exposure_required_for_effect_claim": true,
+      "user_reported_error_triggers_below_area_warning": true,
+      "weak_safe_response": "test_meaningfully_stronger_dose_or_finite_exposure_one_factor",
+      "extensive_user_labels_required": false
+    },
+    "gradient_control_policy": {
+      "version": "source_guard_projection_v1",
+      "control_owner": "agent",
+      "default_strength": 0.0
+    },
+    "cosine_finish_policy": {
+      "version": "agent_cosine_finish_v1",
+      "minimum_factor": 0.1,
+      "maximum_epoch": 200
+    },
+    "human_samples_policy": {
+      "version": "human_samples_agent_timing_v1",
+      "activation_owner": "agent",
+      "initially_off": true,
+      "fixed_epoch_boundary": false,
+      "feature_similarity": "soft_relevance_not_rejection",
+      "recovery": "supplementary_off"
+    },
+    "initialization_trial_policy": {
+      "version": "matched_initialization_trials_v1",
+      "steps_per_arm": 32,
+      "maximum_arms": 3,
+      "adopt_branch_weights": false
+    },
+    "automatic_negative_policy": {
+      "version": "agent_selected_rising_AEF_automatic_negative_production_v4",
+      "user_authorized": true,
+      "control_owner": "same_durable_group_Agent",
+      "reference_weight": 0.00125,
+      "maximum_weight": 0.005,
+      "patch_count_cap": null,
+      "geographic_distribution_quota": false,
+      "absolute_p2_cutoff": null,
+      "source_nonCashew_matching_required": false,
+      "hard_prior_or_distance_gate": false,
+      "exposure_horizon_updates": 128,
+      "occurrences_per_patch_per_generation": 1,
+      "maximum_pixels_per_patch": 256,
+      "maximum_valid_pixel_fraction_per_patch": 0.02,
+      "refresh_at_trained_review": 5,
+      "source_class_weights_changed": false,
+      "ordinary_delivery": "four_class_argmax_Class2",
+      "validation_point_labels_for_training": false,
+      "minimum_regional_prior_ranking_weight": 0.25,
+      "ranking_weight_contract": "regional_prior>=0.25; three ranking weights sum1; remaining allocated to source_cashew_distance/p2_increase"
+    },
+    "negative_control_policy": {
+      "version": "tile_negative_controls_v1",
+      "control_owner": "agent_at_initialization_and_reviews",
+      "small_pool_dose_is_explicit": true
+    },
+    "conditional_negative_policy": {
+      "version": "conditional_negatives_v2",
+      "initial_weight": 0.0,
+      "initial_occurrence_cap": 1,
+      "activation_owner": "agent_at_any_trained_review",
+      "fixed_activation_epoch": null,
+      "novel_feature_is_not_negative_label": true,
+      "minimum_activation_fraction": 0.0,
+      "spatial_prior_guidance": "spatial_prior_negative_guidance_v2",
+      "minimum_activation_epoch": 0
+    },
+    "polygon_supervision_policy": {
+      "version": "human_polygon_group_formal_v1",
+      "user_authorized": true,
+      "ignore_index": 10,
+      "late_boundary_epoch": 0,
+      "separate_sign_means": true,
+      "auxiliary_batchnorm": "frozen_only_during_supplementary_forward",
+      "positive_scale_control": "supplementary_positive_scale",
+      "old_supplementary_labels_allowed": false,
+      "activation_owner": "agent_at_any_trained_review"
+    }
+  },
+  "source_profile": "source2019_benin_e173",
+  "source_year": 2019,
+  "architecture": "a3_spatial_2block",
+  "supplementary": {
+    "enabled": true,
+    "loss": "user_polygon_binary_separate_sign_means_v2",
+    "mode": "human_polygon_binary",
+    "loss_weight": 0.0,
+    "spatial_augmentation": {
+      "enabled": true,
+      "transforms": [
+        "rot90",
+        "horizontal_flip",
+        "vertical_flip"
+      ],
+      "applies_to": "supplementary_image_and_label_pair_only"
+    },
+    "update_interval_steps": 1,
+    "max_occurrences_per_epoch": null,
+    "enters": "segmentation_classifier_only",
+    "excluded_from": [
+      "local_fada_discriminator",
+      "global_fada_discriminator",
+      "domain_adaptation_loss"
+    ]
+  },
+  "supplementary_selection": "human_polygon_geographic500km_v1",
+  "supplementary_empty_policy": {
+    "version": "allow_empty_v1",
+    "enabled": false,
+    "loss_weight": 0.0,
+    "disabled_reason": "no_current_human_polygons_within500km"
+  },
+  "agent": {
+    "skill": "cashew-fada-training-expert",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high"
+  },
+  "max_tasks_per_gpu": 3,
+  "max_concurrent_tasks_total": 24,
+  "raster_staging": false,
+  "target_planet_logit_prior": false,
+  "negative_control_policy": {
+    "version": "tile_negative_controls_v1",
+    "control_owner": "agent_at_initialization_and_reviews",
+    "small_pool_dose_is_explicit": true
+  },
+  "supplementary_geographic_filter": {
+    "enabled": true,
+    "radius_km": 500.0,
+    "distance": "candidate_patch_centre_to_target_boundary_WGS84_km",
+    "user_authorized": true
+  },
+  "conditional_negative_policy": {
+    "version": "conditional_negatives_v2",
+    "initial_weight": 0.0,
+    "initial_occurrence_cap": 1,
+    "activation_owner": "agent_at_any_trained_review",
+    "fixed_activation_epoch": null,
+    "novel_feature_is_not_negative_label": true,
+    "minimum_activation_fraction": 0.0,
+    "spatial_prior_guidance": "spatial_prior_negative_guidance_v2",
+    "minimum_activation_epoch": 0
+  },
+  "recovery_policy": {
+    "version": "automatic_bounded_source_repair_v2",
+    "enabled": true,
+    "max_attempts": 1,
+    "max_extra_epochs": 15,
+    "max_agent_submissions": 5,
+    "max_model_calls": 8,
+    "timeout_seconds": 7200,
+    "strategy": "explicit_source_only_repair_from_verified_healthy_trained_state"
+  },
+  "adm1_evaluation_policy": {
+    "version": "fixed_tile_stratified_evaluation_v1",
+    "training_sample_ratio": 3,
+    "minimum_requested_count": 512,
+    "seed": 916,
+    "allocation": "tile_population_proportional_with_minimum_8_where_available",
+    "training_overlap": "exclude_where_available; record tiny fully-trained-tile overlap",
+    "distribution": "tile_expansion_weighted_hard_argmax_valid_pixel_ratio_estimate",
+    "routine_and_builtin_branches": "same_fixed_sample",
+    "full_prediction": "requested_delivery_only"
+  },
+  "polygon_supervision_policy": {
+    "version": "human_polygon_group_formal_v1",
+    "user_authorized": true,
+    "ignore_index": 10,
+    "late_boundary_epoch": 0,
+    "separate_sign_means": true,
+    "auxiliary_batchnorm": "frozen_only_during_supplementary_forward",
+    "positive_scale_control": "supplementary_positive_scale",
+    "old_supplementary_labels_allowed": false,
+    "activation_owner": "agent_at_any_trained_review"
+  },
+  "user_prior_observation_policy": {
+    "version": "user_prior_observation_v1",
+    "provenance": "Same user-approved CIV whole-WestAfrica prior observation, now explicitly applied to Nigeria regional prior",
+    "observation": "Prior values are generally high. Dense Cashew planting is mainly associated with the strongest highest-value areas on the ENTIRE WEST AFRICA MAP common raw-score scale. Widespread dense predictions outside those strongest areas should prompt a spatial overprediction/negative-transfer investigation. The highest tile in a uniformly low-prior group does not become a high-value area merely by its within-group rank.",
+    "reference_scope": "WestAfrica_whole_map_reference",
+    "WestAfrica_upper_tail_references": {
+      "p90": 0.84424968957901,
+      "p95": 0.8671313524246216,
+      "p99": 0.917087414264679,
+      "median": 0.6309344172477722
+    },
+    "WestAfrica_map": "@WORKSPACE@/experiments/WestAfrica_regional_cashew_prior_20261014_v002/exports/WestAfrica_combined_prior_20261014_v001/WestAfrica_combined_prior.tif",
+    "WestAfrica_map_sha256": "252db96dbd83c81ae2d3e85c0b90c170b0c6bbe60a1f1217e3a2868023a8e534",
+    "local_ranking_may_not_replace_whole_map_reference": true,
+    "within_group_monotonicity_does_not_rule_out_regionwide_overprediction": true,
+    "expert_behavior": "Localize the suspect tile/patch/region; compare temporal spatial predictions, prior hierarchy/confidence, original source Cashew AEF and human heldout FP/positive retention. Form a mechanism hypothesis, choose a bounded adjustment/test, review its response, and retain or reverse it.",
+    "CIV_upper_tail_references": {
+      "approximate_high": 0.92,
+      "approximate_very_high": 0.94,
+      "actual_p90": 0.9177043676376343,
+      "actual_p95": 0.9406640768051148,
+      "median": 0.8611260056495667,
+      "fraction_above_point8": 0.578076838652433
+    },
+    "references_are_hard_gates": false,
+    "prior_is_crop_probability": false,
+    "prior_is_measured_area_fraction": false,
+    "lower_relative_prior_means_crop_absence": false,
+    "local_exceptions_allowed": true,
+    "missing_prior_is_unknown": true,
+    "prior_raster": "@WORKSPACE@/experiments/WestAfrica_regional_cashew_prior_20261014_v002/countries/NGA/NGA_regional_prior.tif",
+    "prior_raster_sha256": "036795ae5c4bce73073abafc0f57de366841c4b118e8b1fc3aedacd721501beb",
+    "source_class_weights_changed": false,
+    "area_quota": null,
+    "negative_patch_count_cap": null,
+    "guidance_scope": "Initialization, every training/experiment review, stopping, checkpoint selection and separate automatic-negative judgment; fixed-control arms remain predetermined.",
+    "expert_identity": "You are a remote-sensing scientist, agricultural land-use expert and domain-adaptation training diagnostician with broad scientific common sense. Integrate evidence and mechanisms like a careful human expert. Do not mechanically execute prior quantiles or probability cutoffs. Before pixel selection or anomaly judgments, reason about the plausible order of magnitude of Cashew planting across WestAfrica, other crops, savannah/forest, drylands, settlements and localized orchards. Separate verified data from estimates/assumptions; do not invent acreage statistics or convert a rough base-rate estimate into a forced group/country area quota. Distinguish plantation footprint from canopy-pixel area, map12country coverage from the entire political subregion, and global rarity from locally dense production. Use source Cashew AEF embeddings accurately (they are not64 optical spectral bands), prior reliability, temporal maps, human FP/retention and gradient/domain evidence. Question both the prior and the model; explain spatial mechanisms, design a bounded useful tuning test, assess actual response and revise your judgment.",
+    "regional_base_rate_reasoning": "First reason about plausible Cashew planting share acrossWestAfrica using agricultural/common-sense/land-use knowledge and any verified acreage; label unsupported numerical estimates as assumptions, and account for footprint/canopy/coverage/year differences. This is expert plausibility evidence, never a target area quota.",
+    "quantiles_are_decision_rules": false,
+    "confusion_diagnostic_guidance": {
+      "version": "woody_wetland_confusion_expert_v1",
+      "user_approved_for_formal_training": true,
+      "diagnostic_brief": "Investigate user-reported Cashew confusion with mixed woody vegetation and wetland landscapes when supported. Localize spatial/temporal errors and distinguish incorrect class-conditioned domain alignment, vegetation ambiguity, insufficient supervision and prior-map mistakes. Use supplied evidence; do not invent class competition or texture/radar/phenology observations. There is no wetland output class. Tree-cover/wetland maps are context, not automatic negative labels. Choose an informative permitted control, paired experiment or reversible weak-negative dose, then assess FP, positive retention, source validation and actual exposure/gradient response. No guaranteed parameter direction, hard area/prior/probability threshold, geographic quota or patch-count cap. Source class weights remain unchanged.",
+      "controls_semantics": "lambda_adv scales the model adversarial objective; D_lr/D_steps change the discriminator signal; temperature/confidence_cap change class conditioning, not final-map decoding. Soft conditioning is temperature softmax clipped without renormalization. Main LR changes update size. Mechanism and measured response justify a direction; never attribute a joint change to one control.",
+      "model_classes": {
+        "0": "crop_others",
+        "1": "mixed_trees_grassland",
+        "2": "cashew",
+        "3": "built_up"
+      },
+      "sources": [
+        {
+          "url": "https://repositorio.inesctec.pt/handle/123456789/13984",
+          "context": "Primary Guinea-Bissau study documents forest/woodland versus Cashew spectral overlap; it does not validate AEF model errors."
+        },
+        {
+          "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/docs/WorldCover_PUM_V2.0.pdf",
+          "context": "Tree cover includes plantations and flooded trees. Annual herbaceous cropland excludes woody crops. External2021 classes may not match2025 conditions."
+        },
+        {
+          "url": "https://www.fao.org/4/ac451e/ac451e04.htm",
+          "context": "Agronomic guidance advises avoiding waterlogging; uncertain wetland maps are not crop absence labels."
+        }
+      ]
+    },
+    "country": "Nigeria",
+    "iso3": "NGA",
+    "human_negative_samples_available": false,
+    "NGA_upper_tail_references": {
+      "p50": 0.8077419996261597,
+      "p90": 0.826915729045868,
+      "p95": 0.8319541156291962,
+      "p99": 0.864005273580551
+    }
+  },
+  "expert_identity_brief": "You are a remote-sensing scientist, agricultural land-use expert and domain-adaptation training diagnostician with broad scientific common sense. Integrate evidence and mechanisms like a careful human expert. Do not mechanically execute prior quantiles or probability cutoffs. Before pixel selection or anomaly judgments, reason about the plausible order of magnitude of Cashew planting across WestAfrica, other crops, savannah/forest, drylands, settlements and localized orchards. Separate verified data from estimates/assumptions; do not invent acreage statistics or convert a rough base-rate estimate into a forced group/country area quota. Distinguish plantation footprint from canopy-pixel area, map12country coverage from the entire political subregion, and global rarity from locally dense production. Use source Cashew AEF embeddings accurately (they are not64 optical spectral bands), prior reliability, temporal maps, human FP/retention and gradient/domain evidence. Question both the prior and the model; explain spatial mechanisms, design a bounded useful tuning test, assess actual response and revise your judgment."
+}

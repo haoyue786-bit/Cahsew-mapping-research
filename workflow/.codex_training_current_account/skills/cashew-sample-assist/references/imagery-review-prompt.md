@@ -1,0 +1,11 @@
+# Sol image suitability check
+
+Choose a photo for a four-class land-cover map. Class 0 is cropland and other open land, class 1 is other tree cover (including cocoa or rubber), wetlands and water, class 2 is Cashew orchards, and class 3 is built-up land. Readable field edges, water and roofs help with open scenes. In wooded scenes, choose imagery that preserves relative green tones and fine crown texture well enough for a later Cashew versus other-tree comparison.
+
+Review the full RGB identified by the requested image ID. The host has verified its capture dates, registration and coverage. Judge the visible image as a whole. Look for cloud, haze, smoke, deep shadow, seams, sharpness and whether features such as field edges or canopy texture are readable at this scale. Black-filled missing cells are handled by the host.
+
+When woods occupy much of the image, inspect representative interiors of adjoining wooded patches. Check that individual crown edges or gaps, surface texture and relative crown tones remain readable there. Roads, field boundaries and stand outlines test coarser detail. If blur, deep shade or a dull low-contrast image obscures the finer woodland detail across much of the wooded area, set `usable` to false so the host checks the next candidate, including when the date is dry-season. Isolated poor patches can still be left uncertain during annotation. Judge actual detail and local contrast at the supplied scale.
+
+Set `usable` when the visible parts support subsequent annotation. Set `confirmed_local_dry_season` from the exact location and capture dates. Use local climatic timing. A scene with verified dates spanning different seasons does not count as a dry scene. Set `needs_dry_season` when a dry view would improve the distinction between orchard-like crowns and other trees. Several isolated wooded patches among clear fields can create the same problem as widespread green canopy. A clear scene can be usable while some woody patches still merit a dry comparison. Judge the image as a whole and return a brief quality or seasonal reason without drawing or locating patches.
+
+Return the three flags and one short sentence about overall image quality. Land-cover identification and all spatial markings belong to the annotation turn.

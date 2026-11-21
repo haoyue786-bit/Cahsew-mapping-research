@@ -1,0 +1,71 @@
+{
+  "architecture": "a3_spatial_2block",
+  "checkpoint_selection_policy": "complete_evidence_selection_v2",
+  "cosine_finish_policy": {
+    "maximum_epoch": 200,
+    "minimum_factor": 0.1,
+    "version": "agent_cosine_finish_v1"
+  },
+  "decision_recall_policy": "complete_training_recall_v3",
+  "deep_review_interval": 5,
+  "experimental_gate": {
+    "absolute_scales": {
+      "adv": 0.1,
+      "cls": 0.1,
+      "effective_gradient_ratio": 0.1,
+      "global_D_acc": 0.1,
+      "local_D_acc": 0.1
+    },
+    "experimental_only": true,
+    "lookback": 4,
+    "mode": "enforce",
+    "recorder_sampling": {
+      "elements_per_tensor": 8,
+      "max_tensors_per_group": 16,
+      "version": "bounded_v1"
+    },
+    "relative_limits": {
+      "adv": 0.5,
+      "cls": 0.5,
+      "effective_gradient_ratio": 0.5,
+      "global_D_acc": 0.5,
+      "local_D_acc": 0.5
+    },
+    "version": "experimental_gate_v1"
+  },
+  "gradient_control_policy": {
+    "control_owner": "agent",
+    "default_strength": 0.0,
+    "version": "source_guard_projection_v1"
+  },
+  "module_control_policy": "module_controls_v2",
+  "module_dynamics_policy": "module_observation_v2",
+  "paired_trial_policy": {
+    "evaluation_sampling": "tile_balanced_spatial_spread_v2",
+    "human_training_probe": true,
+    "max_per_review": 2,
+    "observation_checkpoints": "each_complete_epoch_and_final",
+    "source_validation_patches": 220,
+    "steps": [
+      63,
+      126,
+      315,
+      630
+    ],
+    "unlabelled_panel_patches": 128,
+    "updates_per_epoch": 63,
+    "version": "matched_module_trial_v2"
+  },
+  "parameter_group_policy": {
+    "version": "inherited_parameter_groups_v1"
+  },
+  "predictor_artifact_policy": "verified_predictor_artifacts_v3",
+  "review_interval": 1,
+  "seed": 16,
+  "two_tier_review_policy": "light_per_epoch_deep_every_five_v1",
+  "variant": {
+    "confidence_cap": 0.9,
+    "hard_threshold": null,
+    "local_mode": "soft"
+  }
+}

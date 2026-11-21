@@ -1,0 +1,13 @@
+server:
+  host: 127.0.0.1
+  port: 19574
+  workers: 1
+logging:
+  level: INFO
+  console_level: INFO
+  file_enabled: false
+concurrency:
+  max_workers: 1
+  max_queue_size: 50
+security:
+  api_key_enabled: false

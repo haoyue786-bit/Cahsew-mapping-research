@@ -1,0 +1,7 @@
+# Class representatives from full-scene SAM2 masks
+
+Inspect the full primary RGB and numbered SAM2 masks first. Request the wider landscape, regional background or `view_comparison` for a different-date view when it can settle a specific doubt. Base each class on evidence within the primary image and check for cover changes when comparing dates.
+
+Return one supplied mask ID per confirmed class. Choose a visibly consistent interior with a suitable footprint. Set the slot to null if the class is absent, uncertain or lacks a good representative mask. Use each ID at most once. If the complete visible tile is clearly one class, set `whole_class` and leave all representative slots null. Keep the response short and submit as soon as the necessary visual contrasts are clear.
+
+For Cashew, compare nearby tree crowns under similar light. Give one local observation of the distinguishing relative tone or canopy texture in `cashew_evidence`, or in `whole_cashew_evidence` for a whole-tile label. Set `allow_woody_similarity` true when the class 1 representative is other woodland and the Cashew representative visibly contrasts with it. Wetland and water are class 1 but lack the woodland contrast. On a scene outside the local dry season, request dry imagery if provided response fields permit it and Cashew is plausible or tree identity remains ambiguous. With only non-dry imagery, Cashew requires convincing same-location cues on both dates. Cite auxiliary image IDs actually used.

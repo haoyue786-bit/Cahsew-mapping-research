@@ -1,0 +1,20 @@
+{
+  "state": "frozen",
+  "validation_owner": "primary assistant",
+  "gate": "@WORKSPACE@/handoffs/CIV_agentguide_full_rerun_124_20261013_v001/skill_release.json",
+  "gate_sha256": "3b23acd80d63861c038a50d98d53142e7d3d556035fa18bef21a22c781fd2985",
+  "skill_source": "@WORKSPACE@/code/exp_convconnect/domain_adaptation_archive/skills/cashew-fada-prior-agent-guide/.codex/skills/cashew-fada-training-expert",
+  "skill_sha256": "d6572ccd8288f468194a34b01b981219c9553c6099589adbaba428c2d061e93d",
+  "changed_helpers": [
+    {
+      "file": "expert_dispatch_v4.py",
+      "source": "@WORKSPACE@/handoffs/CIV_agentguide_full_rerun_124_20261013_v001/candidate_expert_dispatch_v4.py",
+      "source_sha256": "7d9adb01f7023e2ae3ca332314d786e0b04a75754f779f6e9cb09aab1f8769e7"
+    }
+  ],
+  "numeric_trainer_preserved": false,
+  "cohort_human_loss_preserved": true,
+  "adaptive_runtime_review": "@WORKSPACE@/fada_expert_runs/CIV_all89_agentguide_124_rerun_20261013_v001/approved_runtime_review.json",
+  "original_numeric_snapshot": "@WORKSPACE@/fada_expert_runs/civ_all_tiles_updated_polygons_20261013_v001/group_training/runtime",
+  "training_launched": false
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "formal_target_patch_count": 3135,
+  "profiles": {
+    "source2019_benin_e173": {
+      "status": "canonical",
+      "compatible_target_years": [2019, 2024, 2025],
+      "source_country": "Benin",
+      "source_year": 2019,
+      "source_root": "@ASSETS@/code/mydataset2020/newdataset",
+      "source_label_root": "@ASSETS@/code/mydataset2020/newdataset/label_processed",
+      "source_train": "@WORKSPACE@/code/exp_convconnect/domain_adaptation_archive/skills/cashew-fada-prior-agent-guide/data/source_train_2019.txt",
+      "source_valid": "@WORKSPACE@/code/exp_convconnect/domain_adaptation_archive/skills/cashew-fada-prior-agent-guide/data/source_valid_2019.txt",
+      "source_train_expected_count": 880,
+      "source_valid_expected_count": 220,
+      "source_train_sha256": "cb514ebbfc08f87b4f85014afd190a604f1809f53ee9c988f1ed75584f3158c0",
+      "source_valid_sha256": "a8f9a9d1a87a51d80b7f20573a0f776df44d2321d1d26b09b709ee25b97a32f7",
+      "pretrained": "@ASSETS@/logs_try_mutil/0226_mutil_GHA_pretrain_200epoch/epoch_weights/epoch_173.pt",
+      "pretrained_sha256": "64b50b34364dc8b59b923482f479de808457845307a86da2d70e56b9d5c1e300",
+      "class_mapping": {
+        "0": "crop_others",
+        "1": "mixed_trees_grassland",
+        "2": "cashew",
+        "3": "built_up"
+      },
+      "ignore_index": 10
+    },
+    "source2025_benin_e173": {
+      "status": "canonical",
+      "compatible_target_years": [2024, 2025],
+      "source_country": "Benin",
+      "source_year": 2025,
+      "source_root": "@ASSETS@/code/mydataset2020/newdataset",
+      "source_label_root": "@ASSETS@/code/mydataset2020/newdataset/label_processed",
+      "source_train": "@WORKSPACE@/code/exp_convconnect/domain_adaptation_archive/skills/cashew-fada-prior-agent-guide/data/source_train_2025.txt",
+      "source_valid": "@WORKSPACE@/code/exp_convconnect/domain_adaptation_archive/skills/cashew-fada-prior-agent-guide/data/source_valid_2025.txt",
+      "source_train_expected_count": 880,
+      "source_valid_expected_count": 220,
+      "source_train_sha256": "a0229c5ae25327d38f5de6caf54f3151314abd62c5b62b0fabd723bb1f00f8b8",
+      "source_valid_sha256": "1b74fb7a19a7509e79285d8ac27d5df135a6da551aa626604c55a53e12daf046",
+      "pretrained": "@ASSETS@/logs_try_mutil/0226_mutil_GHA_pretrain_200epoch/epoch_weights/epoch_173.pt",
+      "pretrained_sha256": "64b50b34364dc8b59b923482f479de808457845307a86da2d70e56b9d5c1e300",
+      "class_mapping": {
+        "0": "crop_others",
+        "1": "mixed_trees_grassland",
+        "2": "cashew",
+        "3": "built_up"
+      },
+      "ignore_index": 10
+    }
+  },
+  "automatic_selection": {
+    "2019": "source2019_benin_e173",
+    "2024": "source2019_benin_e173",
+    "2025": "source2019_benin_e173"
+  },
+  "policy": "Production automatic selection currently uses the validated 2019 Benin source profile for every supported target year. Any other source year requires an explicit registry change and code review. PlanetMap class semantics must exactly match this profile and cannot select a source checkpoint."
+}

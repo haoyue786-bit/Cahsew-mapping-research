@@ -1,0 +1,42 @@
+{
+  "annotation_account": "@WORKSPACE@/.codex_training_current_account",
+  "annotation_modes": [
+    "whole_sample",
+    "direct_polygons",
+    "sam",
+    "sam_and_direct",
+    "two_classes_sam2_complement"
+  ],
+  "auxiliary_query_limit": 10,
+  "contrast_library_sha256": "f83d15171d03b584e9ea904c5653bb07f99a741e805cf71381404faeb33ab1f8",
+  "delivered_outputs": [
+    "image_rgb.png",
+    "labels_native128.png",
+    "labels_native128.tif"
+  ],
+  "formal_2025_earliest_actual_acquisition": "2024-01-01",
+  "image_delivery": "Audited typed images, identical images reused by SHA-256",
+  "imagery_selection": "2025–2026 first. Use eligible 2024 captures when fewer than five recent scenes qualify.",
+  "local_recovery": "Frozen LOCAL_PLAN and verified completed masks/composition",
+  "model": "gpt-6.2-sol",
+  "point_guide": "references/regional-point-evidence.md",
+  "previous_version": "terra-x-sam2-multiscale-20261117",
+  "prior_active_version": "local-preflight-sol-main-image-first-20261119",
+  "prompt_language": "English",
+  "reasoning_effort": "max",
+  "recent_candidate_requirement": 5,
+  "recommended_new_task_entry": "@WORKSPACE@/.codex_training_current_account/skills/cashew-sample-assist/SKILL.md",
+  "reference_counts": {
+    "active": 35,
+    "pending": 1
+  },
+  "reference_mode": "Compact dated appearance contrasts with separate pending reviews and evaluation-source exclusion",
+  "region_matching": "Explicit experimental mode for detector boxes and DINOv2",
+  "service_tier": "default",
+  "version": "cashew-sample-assist-v2-20261120",
+  "version_skill_sha256": "1dcbe53120f80ce114d22f30ddd2c835f9e46a6d696a6b574182b266ddd0d3d4",
+  "visual_evidence": "Compare visible crown outlines in place and view the paired date only where legible",
+  "wide_context": "Primary RGB at start; landscape, registered alternate and regional background on request",
+  "woody_review": "Optional independent pre-SAM2 review of difficult woodland with four-class disagreement preserved as uncertain",
+  "workflow_root": "@WORKSPACE@/.codex_training_current_account/skills/cashew-sample-assist/scripts"
+}

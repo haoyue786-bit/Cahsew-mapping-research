@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cashew Persistent FADA Luna Semantic Decision",
+  "description": "Only semantic choices are produced by Luna. Python derives request binding, parameters_after, changed_parameters, and Planet bookkeeping.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["action", "continue_training", "selected_epoch", "reason_codes", "analysis_summary", "previous_hypothesis_review", "current_state_assessment", "intervention", "next_stage_expectation"],
+  "properties": {
+    "action": {"type": "string", "enum": ["ADJUST", "KEEP", "PAUSE_ADV", "RESUME_ADV", "CONTINUE", "STOP", "SELECT_CHECKPOINT"]},
+    "continue_training": {"type": "boolean"},
+    "selected_epoch": {"type": ["integer", "null"], "minimum": 0, "maximum": 50},
+    "reason_codes": {"type": "array", "minItems": 1, "maxItems": 12, "items": {"type": "string", "minLength": 1, "maxLength": 120}},
+    "analysis_summary": {"type": "string", "minLength": 1, "maxLength": 2000},
+    "previous_hypothesis_review": {"$ref": "#/$defs/hypothesis_review"},
+    "current_state_assessment": {"$ref": "#/$defs/state_assessment"},
+    "intervention": {"$ref": "#/$defs/intervention"},
+    "next_stage_expectation": {"$ref": "#/$defs/next_stage_expectation"}
+  },
+  "$defs": {
+    "hypothesis_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "summary", "evidence"],
+      "properties": {
+        "status": {"type": "string", "enum": ["supported", "partially_supported", "rejected", "not_applicable"]},
+        "summary": {"type": "string"},
+        "evidence": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "state_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "summary", "evidence"],
+      "properties": {
+        "state": {"type": "string"},
+        "summary": {"type": "string"},
+        "evidence": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "parameter_update": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parameter", "value"],
+      "properties": {
+          "parameter": {"type": "string", "enum": ["lambda_adv", "main_lr", "D_lr", "D_steps_per_G_step", "temperature", "confidence_cap", "main_weight_decay", "D_weight_decay", "prior_strength", "model_adam_beta1", "model_adam_beta2", "D_adam_beta1", "D_adam_beta2", "model_adam_eps", "D_adam_eps"]},
+        "value": {"type": "number"}
+      }
+    },
+    "intervention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["adversarial_state_after", "parameter_updates", "emergency", "rationale"],
+      "properties": {
+        "adversarial_state_after": {"type": "string", "enum": ["active", "paused"]},
+        "parameter_updates": {"type": "array", "maxItems": 15, "items": {"$ref": "#/$defs/parameter_update"}},
+        "emergency": {"type": "boolean"},
+        "rationale": {"type": "string"}
+      }
+    },
+    "next_stage_expectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hypothesis", "expected_source", "expected_target", "expected_discriminator", "expected_gradient_ratio", "failure_triggers"],
+      "properties": {
+        "hypothesis": {"type": "string"},
+        "expected_source": {"type": "string"},
+        "expected_target": {"type": "string"},
+        "expected_discriminator": {"type": "string"},
+        "expected_gradient_ratio": {"type": "string"},
+        "failure_triggers": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

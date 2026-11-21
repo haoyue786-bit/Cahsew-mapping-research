@@ -1,0 +1,11 @@
+# Woody land units in the tile retest
+
+Use the same dated RGB and 10 m output grid as the ordinary tile workflow. Compare the crowns at the proposed mark with adjoining cover under similar lighting. Follow repeated broad, blunt-rounded crown lobes through the same parcel. In sparse orchards, follow the crown and gap pattern across the parcel. In closed stands, follow repeated lobes through adjoining crowns. Use the corrected CIV `0013` Cashew and `0008` Mix tree examples when comparing dense stands.
+
+Check the outer foliage outline of several actual crowns at native detail. The Ghana Mix tree contrast includes fine dark dots, small gaps and coarse or granular canopy that can look like broad crown lobes from farther away. A second date that repeats the same rows or parcel shape confirms the location. Look for a crown edge, crown-scale texture or local seasonal contrast that distinguishes the tree cover. Use 10 for woody identity that remains unresolved.
+
+Check each numbered region for local cloud and shadow in the alternate. An alternate corroborates the identity only where the patch is legible and shows a distinguishing crown or seasonal cue. Keep an unresolved region at 10, including dense granular stands that look alike on both dates.
+
+Trace each suspected canopy boundary to both sides. Separation may follow a change in crown size, outline, understory gaps or shade. Fine uniform tree crops, distinct canopy strata and visible scrub or drainage structure can support other woody cover. Use the clearest in-period view for the same land unit and give a local visible reason.
+
+The localized review receives numbered regions, the clean working RGB and the aligned alternate when available. Read the marked region independently. For the ID `background`, judge only the remainder outside the supplied foreground boxes and uncertainty. Class 10 applies when woody evidence remains ambiguous or a change across dates leaves the label period unresolved. Outside the two-class workflow, a clearly identifiable woody interior omitted from the first plan can receive a new mark when the aligned second date also supports its identity. Keep the new box tight and give interior SAM2 points on the working RGB. The host checks the additions and applies SAM2 once after merging.

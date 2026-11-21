@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cashew FADA Training Expert"
+  short_description: "Guide four-class FADA and hard-example acquisition"
+  default_prompt: "Use $cashew-fada-training-expert to review the current group, its annotation intake and its committed training history."
